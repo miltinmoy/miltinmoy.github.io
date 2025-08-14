@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Escritório de Advocacia Dr. Milton Moyses Filho - Atendimento personalizado, ética e resultados. Agende sua consulta.">
+    <meta name="description" content="Dr. Milton Moyses Filho - Advogado especialista em Direito Civil, Família e Imobiliário. Atendimento rápido, ético e focado em resultados.">
     <title>Dr. Milton Moyses Filho - Advocacia</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+
     <style>
         :root {
-            --cor-principal: #0B3C5D; /* Ajuste para sua identidade visual */
-            --cor-secundaria: #D9B310; /* Ajuste para sua identidade visual */
+            --cor-principal: #0B3C5D; /* Ajuste conforme seu branding */
+            --cor-secundaria: #D9B310;
             --cor-texto: #333;
             --cor-fundo: #f8f8f8;
         }
@@ -62,7 +63,25 @@
             margin-bottom: 20px;
         }
 
-        .btn-agendar {
+        /* Glow animado */
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 5px var(--cor-secundaria); }
+            50% { box-shadow: 0 0 20px var(--cor-secundaria); }
+            100% { box-shadow: 0 0 5px var(--cor-secundaria); }
+        }
+
+        @keyframes hoverGlow {
+            0%, 100% {
+                box-shadow: 0 0 10px var(--cor-secundaria);
+                transform: scale(1.05);
+            }
+            50% {
+                box-shadow: 0 0 30px var(--cor-secundaria);
+                transform: scale(1.1);
+            }
+        }
+
+        .btn-glow {
             background: var(--cor-secundaria);
             color: white;
             padding: 15px 25px;
@@ -71,12 +90,14 @@
             font-weight: bold;
             border-radius: 5px;
             cursor: pointer;
-            transition: background 0.3s ease;
             text-decoration: none;
+            transition: transform 0.3s ease;
+            animation: pulseGlow 2s infinite ease-in-out;
+            display: inline-block;
         }
 
-        .btn-agendar:hover {
-            background: #b89510;
+        .btn-glow:hover {
+            animation: hoverGlow 1s infinite alternate ease-in-out;
         }
 
         footer {
@@ -87,7 +108,6 @@
             font-size: 0.9rem;
         }
 
-        /* Botão fixo no mobile */
         .botao-flutuante {
             position: fixed;
             bottom: 20px;
@@ -97,9 +117,14 @@
             padding: 15px 20px;
             border-radius: 50px;
             font-weight: bold;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
             text-decoration: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
             z-index: 999;
+            animation: pulseGlow 2s infinite ease-in-out;
+        }
+
+        .botao-flutuante:hover {
+            animation: hoverGlow 1s infinite alternate ease-in-out;
         }
     </style>
 </head>
@@ -108,24 +133,37 @@
     <header>
         <img src="logo.png" alt="Logo Dr. Milton Moyses Filho">
         <h1>Dr. Milton Moyses Filho</h1>
-        <p>OAB-GO nº 71.174 | Advocacia com ética e resultados</p>
+        <p>OAB-GO nº 71.174 | Advocacia com ética, estratégia e resultados</p>
     </header>
 
     <section>
-        <h2>Atendimento Jurídico Personalizado</h2>
-        <p>Você merece mais que respostas prontas. Nosso escritório oferece atendimento próximo, ético e focado em resultados, para que seus direitos sejam respeitados e sua tranquilidade garantida.</p>
-        <p><strong>Marque agora sua consulta</strong> e receba a análise completa do seu caso, sem compromisso.</p>
-        <a href="https://calendly.com/seuusuario/consulta" class="btn-agendar">Agendar Consulta</a>
+        <h2>Resolva seu problema jurídico ainda hoje</h2>
+        <p>Mais de <strong>centenas de clientes</strong> já confiaram no nosso escritório para proteger seus direitos e conquistar a tranquilidade que merecem.  
+        Cada caso é tratado com atenção total, análise minuciosa e estratégias personalizadas.</p>
+        <p><strong>Agende agora sua consulta</strong> e tenha clareza sobre seus direitos e o melhor caminho a seguir. O primeiro passo pode mudar completamente o rumo do seu caso.</p>
+        <a href="https://calendly.com/seuusuario/consulta" class="btn-glow">Fale com um especialista AGORA</a>
     </section>
 
     <section>
         <h2>Áreas de Atuação</h2>
-        <p>✔ Direito Civil<br>✔ Direito de Família<br>✔ Direito Imobiliário<br>✔ Consultoria Preventiva</p>
+        <p>✔ Direito Civil – proteção patrimonial, contratos e indenizações.<br>
+           ✔ Direito de Família – divórcio, guarda, pensão alimentícia.<br>
+           ✔ Direito Imobiliário – compra e venda, locações e disputas.<br>
+           ✔ Consultoria Preventiva – evite problemas antes que aconteçam.</p>
     </section>
 
     <section>
-        <h2>Por que nos escolher?</h2>
-        <p>✅ Atendimento humanizado<br>✅ Ética e sigilo profissional<br>✅ Experiência em casos complexos<br>✅ Estratégia sob medida para você</p>
+        <h2>Por que escolher nosso escritório?</h2>
+        <p>✅ Atendimento humanizado, com foco na sua realidade.<br>
+           ✅ Ética e sigilo profissional em cada detalhe.<br>
+           ✅ Experiência em casos complexos e de alto impacto.<br>
+           ✅ Estratégias sob medida para aumentar suas chances de vitória.</p>
+    </section>
+
+    <section>
+        <h2>O que dizem nossos clientes</h2>
+        <p><em>"O Dr. Milton me atendeu com paciência e explicou cada passo. Graças ao trabalho dele, resolvi um problema que me atormentava há anos."</em> – M.S., Goiânia</p>
+        <p><em>"Profissional ético e comprometido. Recomendo de olhos fechados!"</em> – L.F., Brasília</p>
     </section>
 
     <footer>
