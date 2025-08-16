@@ -1,176 +1,183 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Dr. Milton Moyses Filho - Advogado especialista em Direito Civil, Família e Imobiliário. Atendimento rápido, ético e focado em resultados.">
-    <title>Dr. Milton Moyses Filho - Advocacia</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moyses Advogados Associados</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --azul-escuro: #0B1F2C;
+      --dourado: #D9B310;
+      --branco: #ffffff;
+    }
 
-    <style>
-        :root {
-            --cor-principal: #0B3C5D; /* Ajuste conforme seu branding */
-            --cor-secundaria: #D9B310;
-            --cor-texto: #333;
-            --cor-fundo: #f8f8f8;
-        }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--azul-escuro);
+      color: var(--branco);
+    }
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background: var(--cor-fundo);
-            color: var(--cor-texto);
-            line-height: 1.6;
-        }
+    /* Barra de navegação */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      background: var(--azul-escuro);
+    }
 
-        header {
-            background: var(--cor-principal);
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
+    nav img {
+      max-height: 60px;
+    }
 
-        header img {
-            max-height: 80px;
-            margin-bottom: 10px;
-        }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
 
-        header h1 {
-            font-size: 1.8rem;
-            font-weight: 800;
-        }
+    nav ul li a {
+      color: var(--branco);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
 
-        header p {
-            font-size: 1rem;
-            opacity: 0.9;
-        }
+    nav ul li a:hover {
+      color: var(--dourado);
+    }
 
-        section {
-            max-width: 1000px;
-            margin: auto;
-            padding: 40px 20px;
-            text-align: center;
-        }
+    /* Hero section */
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 60px 40px;
+      min-height: 90vh;
+    }
 
-        section h2 {
-            font-size: 1.6rem;
-            margin-bottom: 20px;
-            color: var(--cor-principal);
-        }
+    .hero-text {
+      max-width: 50%;
+    }
 
-        section p {
-            margin-bottom: 20px;
-        }
+    .hero-text h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: var(--branco);
+    }
 
-        /* Glow animado */
-        @keyframes pulseGlow {
-            0% { box-shadow: 0 0 5px var(--cor-secundaria); }
-            50% { box-shadow: 0 0 20px var(--cor-secundaria); }
-            100% { box-shadow: 0 0 5px var(--cor-secundaria); }
-        }
+    .hero-text p {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
 
-        @keyframes hoverGlow {
-            0%, 100% {
-                box-shadow: 0 0 10px var(--cor-secundaria);
-                transform: scale(1.05);
-            }
-            50% {
-                box-shadow: 0 0 30px var(--cor-secundaria);
-                transform: scale(1.1);
-            }
-        }
+    .hero-text strong {
+      color: var(--dourado);
+    }
 
-        .btn-glow {
-            background: var(--cor-secundaria);
-            color: white;
-            padding: 15px 25px;
-            border: none;
-            font-size: 1.2rem;
-            font-weight: bold;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: transform 0.3s ease;
-            animation: pulseGlow 2s infinite ease-in-out;
-            display: inline-block;
-        }
+    /* Botão WhatsApp */
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      border: 2px solid var(--dourado);
+      padding: 15px 30px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: var(--branco);
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 20px;
+      transition: all 0.3s ease;
+    }
 
-        .btn-glow:hover {
-            animation: hoverGlow 1s infinite alternate ease-in-out;
-        }
+    .btn-whatsapp:hover {
+      background: var(--dourado);
+      color: var(--azul-escuro);
+    }
 
-        footer {
-            background: var(--cor-principal);
-            color: white;
-            padding: 15px;
-            text-align: center;
-            font-size: 0.9rem;
-        }
+    .btn-whatsapp img {
+      width: 20px;
+      margin-left: 10px;
+    }
 
-        .botao-flutuante {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: var(--cor-secundaria);
-            color: white;
-            padding: 15px 20px;
-            border-radius: 50px;
-            font-weight: bold;
-            text-decoration: none;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-            z-index: 999;
-            animation: pulseGlow 2s infinite ease-in-out;
-        }
+    /* Imagem com moldura triangular */
+    .hero-img {
+      position: relative;
+      max-width: 40%;
+    }
 
-        .botao-flutuante:hover {
-            animation: hoverGlow 1s infinite alternate ease-in-out;
-        }
-    </style>
+    .hero-img img {
+      width: 100%;
+      border-radius: 5px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-img::before {
+      content: "";
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      width: 100%;
+      height: 100%;
+      border: 5px solid var(--dourado);
+      transform: rotate(10deg);
+      z-index: 1;
+    }
+
+    @media(max-width: 900px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero-text {
+        max-width: 100%;
+      }
+      .hero-img {
+        max-width: 80%;
+        margin-top: 30px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <img src="logo.png" alt="Logo Dr. Milton Moyses Filho">
-        <h1>Dr. Milton Moyses Filho</h1>
-        <p>OAB-GO nº 71.174 | Advocacia com ética, estratégia e resultados</p>
-    </header>
+  <!-- Navegação -->
+  <nav>
+    <img src="logo.png" alt="Logo Moyses Advogados Associados">
+    <ul>
+      <li><a href="#">Página inicial</a></li>
+      <li><a href="#">Sobre</a></li>
+      <li><a href="#">Novidades e atualizações</a></li>
+      <li><a href="#">Práticas</a></li>
+      <li><a href="#">Contato</a></li>
+      <li><a href="#">More</a></li>
+    </ul>
+  </nav>
 
-    <section>
-        <h2>Resolva seu problema jurídico ainda hoje</h2>
-        <p>Mais de <strong>centenas de clientes</strong> já confiaram no nosso escritório para proteger seus direitos e conquistar a tranquilidade que merecem.  
-        Cada caso é tratado com atenção total, análise minuciosa e estratégias personalizadas.</p>
-        <p><strong>Agende agora sua consulta</strong> e tenha clareza sobre seus direitos e o melhor caminho a seguir. O primeiro passo pode mudar completamente o rumo do seu caso.</p>
-        <a href="https://calendly.com/seuusuario/consulta" class="btn-glow">Fale com um especialista AGORA</a>
-    </section>
-
-    <section>
-        <h2>Áreas de Atuação</h2>
-        <p>✔ Direito Civil – proteção patrimonial, contratos e indenizações.<br>
-           ✔ Direito de Família – divórcio, guarda, pensão alimentícia.<br>
-           ✔ Direito Imobiliário – compra e venda, locações e disputas.<br>
-           ✔ Consultoria Preventiva – evite problemas antes que aconteçam.</p>
-    </section>
-
-    <section>
-        <h2>Por que escolher nosso escritório?</h2>
-        <p>✅ Atendimento humanizado, com foco na sua realidade.<br>
-           ✅ Ética e sigilo profissional em cada detalhe.<br>
-           ✅ Experiência em casos complexos e de alto impacto.<br>
-           ✅ Estratégias sob medida para aumentar suas chances de vitória.</p>
-    </section>
-
-    <section>
-        <h2>O que dizem nossos clientes</h2>
-        <p><em>"O Dr. Milton me atendeu com paciência e explicou cada passo. Graças ao trabalho dele, resolvi um problema que me atormentava há anos."</em> – M.S., Goiânia</p>
-        <p><em>"Profissional ético e comprometido. Recomendo de olhos fechados!"</em> – L.F., Brasília</p>
-    </section>
-
-    <footer>
-        &copy; 2025 Dr. Milton Moyses Filho - Todos os direitos reservados.
-    </footer>
-
-    <a href="https://calendly.com/seuusuario/consulta" class="botao-flutuante">Agendar Consulta</a>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Boas vindas ao nosso escritório!</h1>
+      <p>Estamos comprometidos em oferecer <strong>soluções jurídicas personalizadas</strong> e dedicadas para atender às suas necessidades.  
+      Com profissionalismo, ética e paixão pela justiça, estamos prontos para guiá-lo através do labirinto legal.</p>
+      <p>Vamos juntos construir uma parceria baseada na confiança e na busca incessante pelo seu direito.  
+      Obrigado por nos escolher.</p>
+      <p><em>Dr. Milton Moyses Filho</em></p>
+      <a href="https://wa.me/seunumerowhatsapp" class="btn-whatsapp">FALE COMIGO 
+        <img src="whatsapp-icon.png" alt="WhatsApp">
+      </a>
+    </div>
+    <div class="hero-img">
+      <img src="sua-foto.png" alt="Dr. Milton Moyses Filho">
+    </div>
+  </section>
 
 </body>
 </html>
