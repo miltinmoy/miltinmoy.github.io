@@ -79,7 +79,26 @@
       color: var(--dourado);
     }
 
-    /* Botão WhatsApp */
+    /* Efeitos do botão */
+    @keyframes pulseGlow {
+      0%, 100% {
+        box-shadow: 0 0 5px var(--dourado), 0 0 15px var(--dourado);
+      }
+      50% {
+        box-shadow: 0 0 20px var(--dourado), 0 0 40px var(--dourado);
+      }
+    }
+
+    @keyframes hoverGlow {
+      0%, 100% {
+        box-shadow: 0 0 15px var(--dourado), 0 0 30px var(--dourado);
+      }
+      50% {
+        box-shadow: 0 0 30px var(--dourado), 0 0 60px var(--dourado);
+      }
+    }
+
+    /* Botão WhatsApp com glow */
     .btn-whatsapp {
       display: inline-flex;
       align-items: center;
@@ -93,10 +112,13 @@
       text-decoration: none;
       border-radius: 5px;
       margin-top: 20px;
-      transition: all 0.3s ease;
+      transition: transform 0.3s ease;
+      animation: pulseGlow 2s infinite;
     }
 
     .btn-whatsapp:hover {
+      transform: scale(1.05);
+      animation: hoverGlow 1s infinite;
       background: var(--dourado);
       color: var(--azul-escuro);
     }
@@ -170,7 +192,7 @@
       <p>Vamos juntos construir uma parceria baseada na confiança e na busca incessante pelo seu direito.  
       Obrigado por nos escolher.</p>
       <p><em>Dr. Milton Moyses Filho</em></p>
-      <a href="https://wa.me/seunumerowhatsapp" class="btn-whatsapp">FALE COMIGO 
+      <a href="https://wa.me/5562999999999" class="btn-whatsapp">FALE COMIGO 
         <img src="whatsapp-icon.png" alt="WhatsApp">
       </a>
     </div>
