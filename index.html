@@ -18,6 +18,7 @@
       font-family: 'Montserrat', sans-serif;
       background: var(--azul-escuro);
       color: var(--branco);
+      overflow-x: hidden; /* remove scroll lateral */
     }
 
     /* Barra de navegação */
@@ -25,12 +26,14 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 15px 40px;
+      padding: 15px 20px;
       background: var(--azul-escuro);
+      position: relative;
     }
 
     nav img {
-      max-height: 75px; /* Aumentei 25% (antes 60px) */
+      max-height: 75px;
+      flex-shrink: 0;
     }
 
     nav ul {
@@ -50,6 +53,46 @@
       color: var(--dourado);
     }
 
+    /* Botão menu mobile */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background: var(--branco);
+    }
+
+    @media(max-width: 900px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background: var(--azul-escuro);
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        padding: 15px;
+        border: 1px solid var(--dourado);
+        border-radius: 5px;
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      nav img {
+        max-height: 55px; /* reduz a logo no mobile */
+      }
+    }
+
     /* Hero section */
     .hero {
       display: flex;
@@ -57,6 +100,7 @@
       align-items: center;
       padding: 60px 40px;
       min-height: 90vh;
+      gap: 40px;
     }
 
     .hero-text {
@@ -98,7 +142,6 @@
       }
     }
 
-    /* Botão WhatsApp com glow */
     .btn-whatsapp {
       display: inline-flex;
       align-items: center;
@@ -124,13 +167,12 @@
     }
 
     .btn-whatsapp img {
-      height: 1.2em; /* Ajustado para acompanhar o tamanho do texto */
+      height: 1.2em;
       margin-left: 10px;
     }
 
-    /* Imagem sem borda */
+    /* Imagem */
     .hero-img {
-      position: relative;
       max-width: 40%;
     }
 
@@ -145,6 +187,7 @@
       .hero {
         flex-direction: column;
         text-align: center;
+        padding: 40px 20px;
       }
       .hero-text {
         max-width: 100%;
@@ -161,6 +204,11 @@
   <!-- Navegação -->
   <nav>
     <img src="https://miltinmoy.github.io/Logo.png" alt="Logo Moyses Advogados Associados">
+    <div class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('active')">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
     <ul>
       <li><a href="#">Página inicial</a></li>
       <li><a href="#">Sobre</a></li>
